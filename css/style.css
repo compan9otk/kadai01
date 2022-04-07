@@ -1,0 +1,93 @@
+@charset "utf-8";
+html{
+    font-size: 62.5%;/* 16px × 62.5% = 10px */
+}
+body{
+    color: #333333;
+    /* font-family:"Open Sans",'ヒラギノ角ゴ ProN W3', Hiragino Kaku Gothic ProN, "メイリオ", Meiryo, sans-serif; */
+    font-size: 1.6rem;
+}
+main{
+    padding: 80px 0;
+    text-align: center;
+}
+button{
+    width: 200px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+    color: #707070;
+    background-color: #ffd61a;
+    font-size: 3.6rem;
+}
+button:hover{
+    transform: scale(1.2, 1.2);
+    opacity: 0.6;
+    animation: flash 0.2s linear infinite;
+}
+/* -----------------
+    card
+*--------------- */
+.item-list{
+    width: 1280px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 80px;
+}
+.content-item{
+    /* display: none; */
+    width: 19%;
+    height: 80px;
+    padding: 4px;
+    font-size: 3.6rem;
+}
+.content-item > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    height: 100%;
+    border-radius: 12px;
+}
+.r{
+    background: linear-gradient(45deg, #757575 0%, #9E9E9E 45%, #E8E8E8 70%, #9E9E9E 85%, #757575 90% 100%);
+}
+.sr{
+    background: linear-gradient(45deg, #B67B03 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #B67B03 90% 100%);
+}
+.ssr{
+    color: #E8E8E8;
+    background: linear-gradient(to right, Magenta, yellow, Cyan, Magenta) 0% center/200%;
+    animation: 2s r linear infinite;
+}
+@keyframes r{
+        100% { background-position: 200%; }
+    }
+@keyframes flash {
+  0%,100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+/* -----------------
+    results
+*--------------- */
+.result-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 63%;
+    width: 40%;
+}
+.result-title{
+    width: 23%;
+    margin: 0 5px 30px;
+    text-align-last: right;
+}
+.result-item{
+    width: 75%;
+    text-align-last: left;
+}
