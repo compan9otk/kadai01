@@ -14,14 +14,33 @@ const generateElem = ()=>{
         return '<div class="r">R</div>';
     }
 };
+
+function sleep(second) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve()
+        }, second * 1000)
+    })
+}
+
+async function syncLoop() {
+    for (let i = 0; i < 10; i++) {
+        let rarity = generateElem();
+        $('#' + i.toString()).html(rarity).fadeIn(500);
+        await sleep(0.4);
+    }
+}
+
 $('#btn').on('click',()=>{
     $('.content-item').css("display","none");
     money +=3000;
     $('.money').text(money.toString() + '円');
-    for(i = 0 ; i < 10 ; i ++){
-        let rarity = generateElem();
-        $('#' + i.toString()).html(rarity).fadeIn(400*(i +1));
-    }
+
+    (async ()=>{
+        console.log("同期的に呼び出す")
+        await syncLoop()
+    }).call();
+
     $('.ssr-num').text(ssr.toString() + '枚');
     $('.sr-num').text(sr.toString() + '枚');
 })
